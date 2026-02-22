@@ -5,35 +5,28 @@
 	--sl-content-width: 55rem;
 }
 
-/* Make nested group labels (2nd level) same weight as regular items */
-.sidebar-content li li > details > summary {
-	font-weight: normal;
-}
-
-/* Target Starlight's specific sidebar group structure */
-starlight-menu-button + nav ul ul > li > details > summary > div > span {
-	font-weight: normal;
+/* 
+ * Normalize nested group labels to match regular sidebar links.
+ * "details details" = any group inside another group.
+ * Top-level categories (Mindset, Workflow, etc.) stay bold.
+ * Nested sub-groups (AI Innovation, Navigator) become normal weight.
+ */
+details details > summary .group-label .large {
 	font-size: var(--sl-text-sm);
+	font-weight: normal;
 }
 
 /* Shrink the right TOC ("On this page") */
-starlight-toc {
-	width: 8rem;
-}
-
 @media (min-width: 72rem) {
-	.right-sidebar {
+	:root {
+		--sl-content-width: 60rem;
+	}
+	
+	.right-sidebar-container {
 		width: 8rem;
 	}
 	
-	.right-sidebar-panel {
+	.right-sidebar {
 		width: 8rem;
-	}
-}
-
-/* On larger screens, give even more space to content */
-@media (min-width: 80rem) {
-	:root {
-		--sl-content-width: 60rem;
 	}
 }

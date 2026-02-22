@@ -5,6 +5,17 @@
 	--sl-content-width: 55rem;
 }
 
+/* Make nested group labels (2nd level) same weight as regular items */
+.sidebar-content li li > details > summary {
+	font-weight: normal;
+}
+
+/* Target Starlight's specific sidebar group structure */
+starlight-menu-button + nav ul ul > li > details > summary > div > span {
+	font-weight: normal;
+	font-size: var(--sl-text-sm);
+}
+
 /* Shrink the right TOC ("On this page") */
 starlight-toc {
 	width: 8rem;

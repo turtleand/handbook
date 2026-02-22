@@ -25,7 +25,6 @@ export default defineConfig({
 					label: 'Mindset',
 					collapsed: false,
 					items: [
-						{ label: 'Human Strength Is the Intent', slug: 'mindset/human-strength-is-intent' },
 						{
 							label: 'AI Innovation Accelerates Daily',
 							collapsed: false,
@@ -34,7 +33,6 @@ export default defineConfig({
 								{ label: "Today's Models Are the Worst", slug: 'mindset/todays-models-worst' },
 							],
 						},
-						{ label: 'Always Invite AI to the Table', slug: 'mindset/invite-ai' },
 						{
 							label: 'Be a Navigator, Not a Passenger',
 							collapsed: false,
@@ -43,6 +41,8 @@ export default defineConfig({
 								{ label: 'Seek a Plurality of Voices', slug: 'mindset/plurality-of-voices' },
 							],
 						},
+						{ label: 'Always Invite AI to the Table', slug: 'mindset/invite-ai' },
+						{ label: 'Human Strength Is the Intent', slug: 'mindset/human-strength-is-intent' },
 					],
 				},
 				{

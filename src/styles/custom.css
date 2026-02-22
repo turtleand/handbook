@@ -1,0 +1,22 @@
+/* Widen sidebar and main content, shrink "On this page" panel */
+
+:root {
+	--sl-sidebar-width: 18rem;
+	--sl-content-width: 50rem;
+}
+
+/* Make the right TOC ("On this page") thinner */
+.right-sidebar {
+	width: 11rem;
+}
+
+.right-sidebar-panel {
+	width: 11rem;
+}
+
+/* On larger screens, give more space to content */
+@media (min-width: 72rem) {
+	:root {
+		--sl-content-width: 55rem;
+	}
+}

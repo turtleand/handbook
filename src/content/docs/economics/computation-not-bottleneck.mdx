@@ -1,0 +1,152 @@
+---
+title: Computation Isn't the Bottleneck
+description: Tokens and rate limits are. Optimize for quota, not CPU cycles.
+---
+
+# Computation Isn't the Bottleneck
+
+In AI-augmented workflows, **computation is cheap and abundant.** Tokens and rate limits are the scarce resources.
+
+Optimize your workflows around token budgets and API quotas, not CPU efficiency.
+
+## The Old Mental Model
+
+In traditional software development:
+- CPU time is expensive → Optimize algorithms
+- Memory is limited → Minimize allocations
+- Network calls are slow → Cache aggressively
+
+**This shaped decades of engineering practice:** Write efficient code. Avoid unnecessary work. Minimize resource usage.
+
+## The New Reality (For AI Work)
+
+In AI workflows:
+- **Computation:** Cheap. Your laptop can handle it. Cloud servers are abundant.
+- **Tokens:** Limited. You have a weekly quota. Blow through it and you're throttled.
+- **Rate limits:** Fixed. 50 requests per minute, period.
+- **Context windows:** Finite. Can't fit infinite history.
+
+**The bottleneck shifted.** Optimizing CPU cycles doesn't matter if you run out of tokens.
+
+## Practical Implications
+
+### Design Around Token Budgets
+
+**Bad approach:**
+- Run AI on every single file in the codebase (uses 1M tokens)
+- Wonder why you hit quota on day 2 of a 7-day week
+
+**Better approach:**
+- Filter to files that changed recently
+- Use smaller models (Haiku) for routine checks
+- Reserve premium models (Opus) for complex reasoning
+
+**The optimization:** Tokens per task, not speed per task.
+
+### Batch to Respect Rate Limits
+
+**Bad approach:**
+- Loop through 100 items, making an AI API call for each
+- Hit rate limit after 50 items
+- Wait, retry, wait, retry
+
+**Better approach:**
+- Batch items into groups
+- Make one API call per group
+- Process 100 items in 5 calls instead of 100
+
+**The optimization:** Calls per minute, not latency per call.
+
+### Context Window Management
+
+**Bad approach:**
+- Dump entire conversation history (50,000 tokens) into every request
+- Wonder why responses are slow and expensive
+
+**Better approach:**
+- Summarize old context
+- Keep recent exchanges fresh
+- Use files for persistent knowledge instead of conversation history
+
+**The optimization:** Relevant tokens, not total tokens.
+
+## Model Selection Strategy
+
+Different models have different costs:
+
+**Opus (expensive, smart):**
+- Complex reasoning
+- Novel problem-solving
+- Strategic decisions
+- High-stakes work
+
+**Sonnet (balanced):**
+- Most coding tasks
+- Content drafting
+- Routine problem-solving
+
+**Haiku (cheap, fast):**
+- Simple tasks
+- Filtering/classification
+- Repetitive work
+- Background checks
+
+**The math:** 1 Opus call ≈ 10 Sonnet calls ≈ 50 Haiku calls (roughly)
+
+**The strategy:** Use the cheapest model that can do the job well enough.
+
+## When Computation Does Matter
+
+**Computation still matters for:**
+- User-facing performance (page load times, responsiveness)
+- Scaling to millions of users (infrastructure costs)
+- Real-time processing (can't wait for slow code)
+
+**But for AI agent workflows?** You're probably fine. The laptop can handle it. The cloud can scale. Tokens are the limit.
+
+## Real Example: Our Weekly Budget
+
+We have a weekly token budget equivalent to ~50M tokens (varies by model mix).
+
+**If we're careless:**
+- Run Opus on everything → 2-3 days before quota exhausted
+- No work possible for rest of week
+- Panic mode, manual labor
+
+**If we're strategic:**
+- Opus for deep thinking (10-20 calls/day)
+- Sonnet for most work (100-200 calls/day)
+- Haiku for batch tasks (500+ calls/day)
+- Full week of productive AI assistance
+
+**The difference:** Strategic token allocation vs wasteful spending.
+
+## The Monitoring Habit
+
+Track your usage:
+- Tokens consumed per day
+- Model distribution (Opus/Sonnet/Haiku split)
+- Remaining quota
+- Burn rate
+
+**Why:** So you know when you're overspending before you hit zero.
+
+**Our tool:** `turtleand usage` command shows current burn rate, remaining budget, and recommendations.
+
+## The Upside
+
+Once you internalize "tokens are the bottleneck," workflow design becomes clear:
+
+- Batch similar tasks (save API calls)
+- Use cheaper models by default (reserve premium for hard problems)
+- Maintain context in files (avoid re-sending same info)
+- Prune conversation history (old messages waste tokens)
+
+**These practices also happen to make workflows faster and cheaper.** Win-win.
+
+---
+
+**See also:**
+- [Opus for Thinking, Sonnet for Doing](/economics/opus-thinking-sonnet-doing)
+- [The 14.3% Daily Budget](/economics/daily-budget)
+- [Batch Similar Tasks](/economics/batch-similar-tasks)

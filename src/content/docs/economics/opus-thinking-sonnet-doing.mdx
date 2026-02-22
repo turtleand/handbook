@@ -1,0 +1,202 @@
+---
+title: Opus for Thinking, Sonnet for Doing
+description: Match model capability to task complexity. Save premium models for hard problems.
+---
+
+# Opus for Thinking, Sonnet for Doing
+
+**The principle:** Use expensive, powerful models (Opus) for complex reasoning. Use balanced models (Sonnet) for execution. Use cheap models (Haiku) for routine work.
+
+Match the model to the task. Don't waste Opus on simple jobs. Don't handicap yourself by using Haiku for hard problems.
+
+## The Model Tiers
+
+### Claude Opus (Premium)
+
+**Best for:**
+- Novel problem-solving
+- Strategic planning
+- Complex code architecture
+- Unfamiliar domains
+- High-stakes decisions
+- "Figure this out" tasks
+
+**Cost:** ~5x Sonnet (~50x Haiku)
+
+**When to use:** When the task requires deep thinking, when stakes are high, or when you need the smartest available model.
+
+### Claude Sonnet (Balanced)
+
+**Best for:**
+- Most coding tasks
+- Content writing
+- Routine problem-solving
+- Implementing known patterns
+- Refactoring
+- "Build this" tasks
+
+**Cost:** ~3x Haiku
+
+**When to use:** Default choice for most work. Smart enough for 80% of tasks, cheap enough to use frequently.
+
+### Claude Haiku (Economy)
+
+**Best for:**
+- Simple edits
+- Classification/filtering
+- Template filling
+- Repetitive tasks
+- Background checks
+- "Do this obvious thing" tasks
+
+**Cost:** Baseline
+
+**When to use:** High-volume routine work. Tasks where "good enough" is actually good enough.
+
+## Decision Framework
+
+**Ask yourself:**
+
+1. **Is this a new problem or a known pattern?**
+   - New → Opus or Sonnet
+   - Known → Sonnet or Haiku
+
+2. **What's the cost of a mistake?**
+   - High (production code, customer-facing) → Opus or Sonnet
+   - Low (internal docs, drafts) → Sonnet or Haiku
+
+3. **Does this require creativity or just execution?**
+   - Creativity → Opus
+   - Execution → Sonnet
+   - Rote work → Haiku
+
+4. **How many times will I run this?**
+   - Once → Use what's needed, cost doesn't matter
+   - 100 times → Optimize for cheapest model that works
+
+## Real Examples from Our Practice
+
+### Task: Write a Blog Post
+
+**Opus approach:**
+- Draft outline (strategic thinking about structure)
+- Generate first draft (Sonnet handles this fine)
+- Review and refine (Sonnet)
+
+**Cost:** 1 Opus call + 2 Sonnet calls
+
+**Sonnet-only approach:**
+- Draft outline (Sonnet)
+- Generate first draft (Sonnet)
+- Review and refine (Sonnet)
+
+**Cost:** 3 Sonnet calls ≈ 0.6 Opus calls
+
+**The call:** Sonnet is fine for blog posts. Save Opus for harder problems.
+
+### Task: Design a New System Architecture
+
+**Sonnet approach:**
+- Risk: Might miss edge cases, suggest suboptimal patterns
+
+**Opus approach:**
+- Explores alternatives thoroughly
+- Considers tradeoffs deeply
+- Flags potential issues
+
+**The call:** Use Opus. The 5x cost is worth it when designing something new.
+
+### Task: Batch-Process 500 Files
+
+**Sonnet approach:**
+- Cost: 500 Sonnet calls = 100 Opus calls equivalent
+- Might overspend on routine work
+
+**Haiku approach:**
+- Cost: 500 Haiku calls = 10 Opus calls equivalent
+- Good enough for simple transformations
+
+**The call:** Use Haiku. You're doing the same simple task 500 times.
+
+## The Escalation Pattern
+
+Start cheap, escalate if needed:
+
+1. **Try Haiku** → If it works, you saved money
+2. **If Haiku fails** → Try Sonnet
+3. **If Sonnet struggles** → Use Opus
+
+**Example:**
+- Task: Summarize a technical paper
+- Haiku attempt: Misses key nuance
+- Sonnet attempt: Good summary
+- Stop here, don't escalate to Opus
+
+**Cost:** 1 Haiku + 1 Sonnet ≈ 0.5 Opus
+
+**Benefit:** You tried the cheap option first. Only spent more when needed.
+
+## The "Thinking Budget"
+
+We reserve a portion of our weekly quota for Opus:
+
+- **70% Sonnet/Haiku:** Execution, routine work
+- **30% Opus:** Strategic thinking, complex problems
+
+**Why:** Ensures we don't blow the entire budget on routine tasks, leaving nothing for hard problems.
+
+**Tracking:** Weekly usage reports show model distribution. If Opus usage drops to 5%, we're probably not tackling hard enough problems. If it climbs to 60%, we're overspending.
+
+## Common Mistakes
+
+❌ **Using Opus for everything**
+- "It's the best model, so I should always use it"
+- Result: Quota exhausted in 2 days, no work possible rest of week
+
+❌ **Using Haiku for everything**
+- "I want to save money"
+- Result: Poor quality, wasted time fixing bad outputs
+
+❌ **Never escalating**
+- "Sonnet should be able to do this"
+- Result: Struggling with a task that Opus would solve in one shot
+
+✅ **Right approach:**
+- Default to Sonnet
+- Use Haiku for high-volume simple tasks
+- Escalate to Opus when the task genuinely requires it
+- Track usage to maintain balance
+
+## The Mental Shift
+
+Traditional software: "CPU time is expensive, optimize everything."  
+AI workflows: "Thinking is expensive, execution is cheap."
+
+**Optimize for:**
+- Using the right tool for the job
+- Spending premium tokens on hard problems
+- Batching routine work to use cheaper models
+
+**Don't optimize for:**
+- Always using the "best" model
+- Saving money on tasks where quality matters
+- Avoiding Opus when you're genuinely stuck
+
+## The Productivity Paradox
+
+**Paradox:** Sometimes using the expensive model is more economical.
+
+**Example:**
+- Spend 10 Sonnet calls struggling with a problem → 2 Opus equivalents
+- Or spend 1 Opus call solving it immediately → 1 Opus equivalent
+
+**The expensive model was cheaper** because it solved the problem faster.
+
+**Lesson:** Don't be penny-wise, pound-foolish. Use Opus when it saves overall time and tokens.
+
+---
+
+**See also:**
+- [Computation Isn't the Bottleneck](/economics/computation-not-bottleneck)
+- [The 14.3% Daily Budget](/economics/daily-budget)
+- [Cost of Freezing > Cost of Spawning](/economics/cost-of-freezing)

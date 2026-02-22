@@ -1,0 +1,165 @@
+---
+title: Trust But Verify
+description: AI output needs human review, especially for visual and creative work.
+---
+
+# Trust But Verify
+
+AI is good. AI is not perfect. **Every AI output needs human verification before it ships.**
+
+This is [Ethan Mollick's second principle](/foundations/ethan-mollick-principles): "Always be the human in the loop."
+
+## What Can Go Wrong
+
+AI-generated content can:
+
+**Look perfect and be wrong:**
+- Code that compiles but has logic errors
+- Text that's grammatically correct but factually inaccurate
+- Designs that pass accessibility checks but have terrible UX
+- SQL queries that run but return wrong results
+
+**Pass automated checks and fail in practice:**
+- Unit tests pass, integration fails
+- Linting passes, visual layout breaks
+- Build succeeds, deployment fails
+- Syntax correct, semantics wrong
+
+**Be confidently incorrect:**
+- AI doesn't know when it's wrong
+- Hallucinated citations that sound real
+- Plausible-but-incorrect technical explanations
+- Made-up API methods that don't exist
+
+## The Verification Checklist
+
+### For Code
+
+1. **Does it solve the actual problem?** (Not just compile)
+2. **Are edge cases handled?** (AI often misses these)
+3. **Is it maintainable?** (Or clever but inscrutable?)
+4. **Does it match our patterns?** (Consistency with existing code)
+5. **Are there security implications?** (AI doesn't always think about auth, injection, etc.)
+
+### For Content
+
+1. **Are facts accurate?** (Verify claims, especially stats)
+2. **Is the tone right?** (AI defaults to generic corporate)
+3. **Does it sound human?** (Or like a ChatGPT essay?)
+4. **Are examples relevant?** (AI sometimes uses outdated or wrong examples)
+5. **Is there actual insight?** (Or just repackaged common knowledge?)
+
+### For Design
+
+1. **Does it actually look good?** (Code review can't catch visual issues)
+2. **Is it accessible?** (Color contrast, screen readers, keyboard navigation)
+3. **Does it work on mobile?** (AI often designs desktop-first)
+4. **Is it performant?** (Heavy assets, unnecessary animations)
+5. **Does it match brand?** (AI doesn't know your visual identity)
+
+## The Trust Gradient
+
+Not everything needs the same level of verification:
+
+**High trust (light review):**
+- Boilerplate code (standard patterns)
+- Internal documentation (low stakes)
+- Routine refactoring (well-tested)
+
+**Medium trust (careful review):**
+- New features (novel logic)
+- Public-facing content (reputation at stake)
+- API changes (affects downstream users)
+
+**Low trust (deep verification):**
+- Security-critical code (auth, payments, data handling)
+- Legal/compliance content (liability risk)
+- Infrastructure changes (can break everything)
+- Novel approaches (AI trying something new)
+
+**The principle:** Trust scales with repetition and stakes. New tasks and high-stakes work get more scrutiny.
+
+## Real Examples from Our Practice
+
+### The Color Contrast Bug
+
+- **AI generated:** Blog layout component
+- **Build status:** ✅ Passed
+- **Linting:** ✅ Passed
+- **Visual review:** ❌ Text unreadable (light gray on white)
+- **Caught by:** Human reviewing Netlify preview
+- **Lesson:** Visual bugs don't show up in code review
+
+### The Hallucinated API
+
+- **AI generated:** Code using Deepgram API
+- **AI claimed:** Method `.transcribe()` exists
+- **Reality:** Method is `.transcription()` (different name)
+- **Caught by:** Runtime error during testing
+- **Lesson:** AI confidently invents APIs that sound plausible
+
+### The Factually Wrong Blog Post
+
+- **AI generated:** Article about AI model capabilities
+- **AI claimed:** GPT-4 has 1 trillion parameters
+- **Reality:** GPT-4's parameter count isn't public (much speculation)
+- **Caught by:** Human fact-checking before publish
+- **Lesson:** AI states guesses as facts
+
+## The Automation Paradox
+
+**Paradox:** The better AI gets, the harder verification becomes.
+
+**Why:** When AI was obviously wrong 50% of the time, you checked everything carefully. When AI is right 95% of the time, you start trusting blindly.
+
+**The 5% that's wrong** can be catastrophic. A security hole. A factual error that damages credibility. A bug that breaks production.
+
+**The discipline:** Verify even when AI seems confident. Especially when AI seems confident.
+
+## Building Verification Into Workflow
+
+**Don't make verification optional.** Build it into the process:
+
+1. **AI generates** → Draft PR
+2. **Automated checks run** → Build, lint, test
+3. **Human reviews** → Code + visual + logic
+4. **Approval** → Human clicks merge
+5. **Deploy** → Smoke tests, monitoring
+
+**No shortcut.** Even for "obvious" fixes.
+
+## The Trust Trajectory
+
+**Early on (first 10 AI outputs):**
+- Verify everything deeply
+- Expect surprises
+- Correct mistakes, teach preferences
+
+**After 50+ outputs:**
+- AI understands your patterns
+- Verification gets faster (you know what to look for)
+- Trust builds, but you still verify
+
+**After 500+ outputs:**
+- AI rarely makes the same mistake twice
+- Verification is quick scanning
+- But you never skip it entirely
+
+**The asymptote:** You get faster at verification, but you never eliminate it.
+
+## What "Trust" Actually Means
+
+**Trust doesn't mean blind acceptance.**  
+**Trust means confidence in verification speed.**
+
+**Low trust:** "I need to check every line, every claim, every detail."  
+**High trust:** "I'll check the logic, skim the implementation, spot-check the details."
+
+**Both involve verification.** The difference is how thorough.
+
+---
+
+**See also:**
+- [Sub-Agent Visual Review Rule](/quality/sub-agent-visual-review)
+- [Navigator, Not a Passenger](/mindset/navigator-not-passenger)
+- [Ethan Mollick's Four Principles](/foundations/ethan-mollick-principles)

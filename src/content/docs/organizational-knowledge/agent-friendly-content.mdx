@@ -1,0 +1,95 @@
+---
+title: "Agent-Friendly Content"
+description: "Write for humans and AI. It's a third language alongside human and machine."
+---
+
+Content should be readable by both humans and AI. That's not two audiences. It's one audience with two entry points.
+
+## The Third Language
+
+You already write for:
+- **Humans** — natural language, formatted for reading
+- **Machines** — structured data, formatted for parsing
+
+Agent-friendly content is both. It's written for humans but structured for machines.
+
+## What Makes Content Agent-Friendly
+
+**Complete frontmatter:**
+```yaml
+---
+title: "Exact Title"
+description: "Clear one-line summary"
+date: 2024-02-15
+author: "Turtleand"
+tags: ["ai", "automation", "workflow"]
+---
+```
+
+Humans see metadata. AI gets structured fields it can query.
+
+**llms.txt files:**
+Full-text indexes that AI can read directly. No need to spider your site. Just read one file and get everything.
+
+**JSON-LD structured data:**
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Title Here",
+  "description": "Description here"
+}
+</script>
+```
+
+Search engines use this. AI uses this. Same data, multiple consumers.
+
+**Clear semantic structure:**
+Proper heading hierarchy. Meaningful section breaks. Logical flow.
+
+Humans navigate by headings. AI parses by structure. Good structure helps both.
+
+## Why It Matters
+
+If your content is only human-readable, AI has to hallucinate or scrape poorly. It can't reliably reference your work.
+
+If your content is agent-friendly, AI can:
+- Cite your articles accurately
+- Cross-reference between pieces
+- Build on your published knowledge
+- Recommend your content when relevant
+
+You get credit. Users get accurate information. AI gets reliable sources.
+
+## The Workflow
+
+Every content PR should include:
+1. Complete frontmatter
+2. llms.txt regeneration (automated in build)
+3. JSON-LD structured data
+4. Proper heading hierarchy
+
+This isn't extra work. It's structuring work you're already doing.
+
+## The Multiplier Effect
+
+Agent-friendly content:
+- Ranks better in search (structured data helps SEO)
+- Gets cited by AI (proper attribution)
+- Becomes findable programmatically (llms.txt)
+- Compounds your reach (AI recommends it)
+
+You write once. Humans find it. AI references it. Your effort multiplies.
+
+## In Practice
+
+Before publishing:
+- Frontmatter complete? ✓
+- llms.txt will auto-update? ✓
+- JSON-LD present? ✓
+- Headings make sense? ✓
+
+If yes to all four, ship it. You've made content that works for everyone.
+
+Write once. Reach humans and AI. That's agent-friendly content.

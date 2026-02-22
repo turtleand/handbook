@@ -1,0 +1,60 @@
+---
+title: "Zero Breaking Changes Policy"
+description: "Auto-revert if smoke tests fail. Ship with confidence, rollback without hesitation."
+---
+
+Breaking production is unacceptable. Not "unfortunate." Not "happens sometimes." Unacceptable.
+
+## The Policy
+
+If a merge causes post-deploy smoke tests to fail, auto-revert immediately. No discussion, no debugging in production, no "quick fix." Rollback first, fix later.
+
+This isn't about blame. It's about reliability.
+
+## What Qualifies as Breaking
+
+- Site doesn't build
+- Critical pages return 404
+- Console errors on load
+- Core functionality broken (navigation, forms, etc.)
+
+It doesn't matter if the code "should" work. If it breaks production, it reverts.
+
+## Auto-Merge Windows
+
+Structure and config changes can auto-merge after a 4-hour human review window. If no objection within that window, the merge happens automatically.
+
+**But.** If post-merge smoke tests fail, the auto-merge was wrong. Revert, fix the tests or the code, try again.
+
+The 4-hour window is for catching conceptual problems. The smoke tests are for catching execution problems.
+
+## Content Never Auto-Merges
+
+Blog posts, documentation, topic guides — these always need human review before merging. Not because AI can't write. Because content represents your voice, your philosophy, your brand.
+
+Structure can auto-merge. Content can't.
+
+## Trust Through Safety
+
+Auto-merge is earned through zero breaking changes. Every clean deploy increases trust. Every broken deploy resets the counter.
+
+If you want more automation, ship more reliability. The path to less oversight is through perfect execution.
+
+## The Rollback Mindset
+
+Reverting isn't failure. Reverting is discipline.
+
+You tried something. It didn't work. You undo it and try again. That's engineering.
+
+Leaving production broken while you debug "just one more thing" — that's failure.
+
+## Implementation
+
+1. Merge happens (auto or manual)
+2. Deploy triggers
+3. Smoke tests run on production
+4. If any test fails: auto-revert to previous commit
+5. Alert human with failure details
+6. Fix in a new branch, repeat
+
+The goal isn't to never make mistakes. The goal is to never *ship* mistakes.

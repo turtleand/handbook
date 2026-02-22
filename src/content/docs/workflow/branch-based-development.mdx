@@ -1,0 +1,176 @@
+---
+title: Branch-Based Development
+description: Even AI commits go through PR review. No direct pushes to main.
+---
+
+# Branch-Based Development
+
+**The rule:** Never push directly to `main` or `master`. Always use feature branches and pull requests, even for AI-generated code.
+
+This isn't bureaucracy. It's quality control and a learning opportunity.
+
+## Why This Matters
+
+AI-generated code can look perfect and still be wrong:
+- Logic errors that pass linting
+- Performance issues that don't show in small tests
+- Security vulnerabilities that aren't obvious
+- UI rendering bugs that code review misses
+
+**Pull requests create a checkpoint:** A moment to review, verify, and decide before code reaches production.
+
+## The Workflow
+
+1. **Create a feature branch**
+   ```bash
+   git checkout -b feature/description
+   ```
+
+2. **Make changes** (AI-generated or human-written)
+
+3. **Commit with clear messages**
+   ```bash
+   git commit -m "Add email validation with edge case handling"
+   ```
+
+4. **Push to remote**
+   ```bash
+   git push origin feature/description
+   ```
+
+5. **Create pull request** with:
+   - Clear description of what changed and why
+   - Classification (risk level, category)
+   - Preview link (if applicable)
+   - Verification checklist
+
+6. **Human reviews** (even if AI wrote 100% of the code)
+
+7. **Merge** after approval
+
+## Why AI Code Still Needs Review
+
+**AI writes code that:**
+- Passes linting ✅
+- Follows syntax correctly ✅
+- Runs without errors ✅
+- Looks professional ✅
+
+**But might:**
+- Implement the wrong solution to the problem ❌
+- Miss edge cases ❌
+- Have performance issues at scale ❌
+- Introduce security vulnerabilities ❌
+- Break visual layout in ways code review doesn't catch ❌
+
+**Example from our practice:**
+- AI generated a blog layout component
+- Build passed ✅
+- Linting passed ✅
+- Deployed to preview
+- Visual review: Text was unreadable (wrong color contrast)
+- Caught in PR review, fixed before merge
+
+**The lesson:** Code correctness ≠ solution correctness. Human review catches what automated checks miss.
+
+## The PR Description Matters
+
+A good PR description (even for AI-generated code) includes:
+
+**What changed:**
+- "Added email validation to user registration form"
+
+**Why:**
+- "Previous version didn't handle plus-addressing (user+tag@domain.com)"
+
+**How to verify:**
+- "Test with emails containing +, check that they're accepted"
+
+**Risk assessment:**
+- "LOW — isolated change, well-tested edge case"
+
+**Preview:**
+- Link to deployed preview, screenshot, or code snippet
+
+**This forces you to think critically about the change,** even if AI wrote it.
+
+## The Git Identity
+
+For AI-generated commits, use a distinct identity:
+
+```bash
+git config user.name "TurtleandBot"
+git config user.email "openclaw-bot@turtleand.com"
+```
+
+**Why:**
+- Makes it clear which commits were AI-assisted
+- Helps track patterns (do AI commits get reverted more often?)
+- Maintains transparency
+
+**Not about hiding AI involvement** — it's about clarity.
+
+## Branch Naming Conventions
+
+We use:
+- `feature/description` — New functionality
+- `fix/description` — Bug fixes
+- `improvement/description` — Enhancements to existing features
+
+**Examples:**
+- `feature/email-validation`
+- `fix/mobile-navigation`
+- `improvement/homepage-performance`
+
+**Keep it short, descriptive, kebab-case.**
+
+## The Human Decides to Merge
+
+AI can create the PR. AI can write the description. AI can even respond to review comments.
+
+**But the human clicks "Merge."**
+
+This is the [human in the loop](/foundations/ethan-mollick-principles) principle in action. The final call on what reaches production is a human decision.
+
+## When to Bypass (Never)
+
+There are no exceptions to branch-based development in our practice:
+
+- ❌ Not for typo fixes
+- ❌ Not for "obvious" changes
+- ❌ Not for urgent hotfixes
+- ❌ Not for documentation
+- ❌ Not for anything
+
+**Why so strict?**
+Because "obvious" changes break production more often than you'd think. The 30 seconds to create a branch and PR is insurance against "oops, that broke everything."
+
+## The Learning Opportunity
+
+PRs aren't just gatekeeping. They're **documentation of what changed and why.**
+
+Six months later, when someone asks "Why does the code do X?" — the PR has the answer.
+
+**Git commit messages answer "What?"**  
+**PR descriptions answer "Why?"**
+
+Both matter.
+
+## The Trust Progression
+
+As AI proves reliable over time, the review process can lighten:
+
+- **Early on:** Detailed review of every AI-generated line
+- **After 50+ successful PRs:** Skim for obvious issues, trust the tests
+- **After 100+ successful PRs:** Focus review on high-risk changes, quick-approve routine work
+
+**But the process stays the same:** Branch → PR → Review → Merge.
+
+The *depth* of review adjusts with trust. The *existence* of review doesn't.
+
+---
+
+**See also:**
+- [Trust But Verify](/quality/trust-but-verify)
+- [Zero Breaking Changes Policy](/quality/zero-breaking-changes)
+- [Ethan Mollick's Four Principles](/foundations/ethan-mollick-principles) — #2: Always be the human in the loop

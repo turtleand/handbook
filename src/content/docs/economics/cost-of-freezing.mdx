@@ -1,0 +1,206 @@
+---
+title: Cost of Freezing > Cost of Spawning
+description: An unnecessary sub-agent is cheaper than a frozen main loop. Bias toward spawning.
+---
+
+# Cost of Freezing > Cost of Spawning
+
+**The principle:** When in doubt, spawn a sub-agent. The cost of spawning unnecessarily is low. The cost of freezing the main loop is high.
+
+This is the economic justification for the [Sub-Agents for Parallelism](/workflow/sub-agents-parallelism) workflow.
+
+## The Cost of Freezing
+
+When your main AI agent is blocked waiting for a long task:
+
+**Direct costs:**
+- User can't issue new commands
+- User thinks the system is broken
+- User context-switches (checks email, gets distracted)
+- User loses flow state
+
+**Indirect costs:**
+- Trust erosion ("Why is this so slow?")
+- Reduced usage ("I'll just do it manually")
+- Missed opportunities (couldn't pivot when new info arrived)
+
+**Compounding costs:**
+- Next time, user hesitates before asking AI for help
+- Over time, AI becomes "that slow thing I avoid"
+
+**Bottom line:** A frozen main loop trains users not to rely on AI.
+
+## The Cost of Spawning
+
+When you spawn a sub-agent unnecessarily (task finishes in less than 30 seconds):
+
+**Direct costs:**
+- Slight overhead (create session, ~0.5 seconds)
+- Slightly more token usage (separate context setup)
+- One extra notification ("sub-agent finished")
+
+**Indirect costs:**
+- None. User doesn't care if task ran inline or in background.
+
+**Compounding costs:**
+- None. Spawning doesn't degrade user experience.
+
+**Bottom line:** An unnecessary spawn is a rounding error.
+
+## The Math
+
+**Scenario:** A task might take 20 seconds or might take 2 minutes (uncertain).
+
+**Option A (spawn):**
+- If task takes 20s: Slight overhead, but user stayed responsive
+- If task takes 2min: Main loop free, user happy
+
+**Option B (inline):**
+- If task takes 20s: Fine, user waited
+- If task takes 2min: Main loop frozen, user frustrated
+
+**Expected value:**
+- Option A: Small downside, big upside
+- Option B: Small upside, big downside
+
+**Bias toward Option A.**
+
+## Real Cost Analysis
+
+### Unnecessary Spawn
+
+**Cost in dollars:** ~$0.0001 extra (minimal token overhead)  
+**Cost in time:** 0.5 seconds overhead  
+**Cost in UX:** Zero (user doesn't notice)
+
+**Total:** Negligible
+
+### Frozen Main Loop
+
+**Cost in dollars:** $0 (no extra tokens)  
+**Cost in time:** User blocked for 2 minutes  
+**Cost in UX:** User frustrated, loses trust, context-switches
+
+**Total:** High (especially if it happens repeatedly)
+
+## The Decision Rule
+
+**When task duration is uncertain:**
+- Could be 10 seconds → Could spawn inline
+- Could be 5 minutes → Must spawn
+
+**Decision:** Spawn. The asymmetry favors safety.
+
+**When task duration is predictable:**
+- Definitely less than 10 seconds → Inline
+- Definitely more than 30 seconds → Spawn
+- 10-30 seconds → Judgment call (lean toward spawn if part of a longer workflow)
+
+## The Trust Factor
+
+Users build mental models:
+
+**"This AI agent is fast and responsive"**
+- User asks questions frequently
+- User trusts AI to handle complex requests
+- User stays in flow
+
+**"This AI agent is slow and unreliable"**
+- User hesitates before asking
+- User only uses AI for simple tasks
+- User defaults to manual work
+
+**The difference:** Whether the main loop stays responsive.
+
+**One frozen interaction can shift perception.** "I asked it to run tests and it just... stopped responding. I thought it crashed."
+
+**Cost of that perception:** User uses AI less. Compounds over time.
+
+## The Overcorrection Risk
+
+**Possible overcorrection:** "Spawn everything! Even reading a file!"
+
+**Why this is bad:**
+- Overhead adds up (spawning 100 times for 100 quick tasks)
+- Notifications become noise ("sub-agent finished" × 100)
+- Complexity for no benefit
+
+**The guideline:** Spawn for work >30 seconds or when uncertain. Don't spawn for obviously quick tasks.
+
+## The Learning Curve
+
+**Early on:** You'll guess wrong sometimes.
+- Spawn a task that finishes in 5 seconds → Slight overhead, no harm
+- Run inline a task that takes 3 minutes → User frustrated, lesson learned
+
+**Over time:** You'll calibrate better.
+- Pattern recognition ("This type of task usually takes X")
+- Safer defaults (when uncertain, spawn)
+
+**The meta-lesson:** The cost of guessing wrong (inline) is higher than the cost of guessing wrong (spawn). Bias toward spawning.
+
+## Practical Examples
+
+### Task: npm install
+
+**Could take:** 10 seconds (few dependencies) to 5 minutes (large project)
+
+**Decision:** Spawn. The uncertainty alone justifies it.
+
+### Task: Read one file
+
+**Takes:** Less than 1 second
+
+**Decision:** Inline. Don't spawn.
+
+### Task: Generate a 3000-word article
+
+**Could take:** 30 seconds (fast model) to 2 minutes (detailed prompt)
+
+**Decision:** Spawn. Even if it's fast, it's close to the threshold.
+
+### Task: Run Playwright tests
+
+**Takes:** 1-3 minutes
+
+**Decision:** Definitely spawn.
+
+### Task: Single file edit
+
+**Takes:** 2-5 seconds
+
+**Decision:** Inline.
+
+### Task: Batch edit 50 files
+
+**Takes:** Uncertain (depends on complexity per file)
+
+**Decision:** Spawn. Volume + uncertainty = spawn.
+
+## The Opportunity Cost
+
+**When main loop is frozen:**
+- User has a new idea → Can't ask
+- User gets a notification → Can't respond
+- User wants to pivot → Can't redirect
+
+**When main loop is free:**
+- User can iterate rapidly
+- User can multi-task (AI handles background work, user focuses on next thing)
+- User stays productive
+
+**Opportunity cost of freezing:** All the things the user *would have done* if the agent were responsive.
+
+## The Bottom Line
+
+**Spawning costs:** Tokens + overhead (tiny)  
+**Freezing costs:** Flow + trust + productivity (large)
+
+**Bias toward spawning.**
+
+---
+
+**See also:**
+- [Sub-Agents for Parallelism](/workflow/sub-agents-parallelism)
+- [Computation Isn't the Bottleneck](/economics/computation-not-bottleneck)
+- [The 14.3% Daily Budget](/economics/daily-budget)

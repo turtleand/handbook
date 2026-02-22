@@ -10,6 +10,8 @@ This is a practical principles handbook for the AI era. It targets organizations
 
 Think of it like a safety handbook for a factory, but for cognitive work in the AI age. You don't need to understand the chemistry of every compound. You need to know the rules that keep things running well.
 
+**Density:** Each principle should be the minimum-core idea. No filler, no padding, no "here are 5 examples" sections. State the principle, explain why it matters, link to deeper resources if they exist. If a principle page is longer than ~200 words, it's probably too long. Strip it to the skeleton.
+
 **Scope:**
 - How to think about AI adoption (Mindset)
 - How to structure human-AI workflows (Workflow)

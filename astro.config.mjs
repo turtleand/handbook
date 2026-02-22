@@ -50,7 +50,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: 'Automated First Pass, Human Final Review', slug: 'workflow/automated-first-pass' },
-						{ label: 'Voice-First When Possible', slug: 'workflow/voice-first' },
+						{ label: 'Reduce the Human Bottleneck', slug: 'workflow/voice-first' },
 						{ label: 'Sub-Agents for Parallelism', slug: 'workflow/sub-agents-parallelism' },
 						{ label: 'Memory Files Over Mental Notes', slug: 'workflow/memory-files' },
 						{ label: 'Branch-Based Development', slug: 'workflow/branch-based-development' },

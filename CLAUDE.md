@@ -56,6 +56,12 @@ Think of it like a safety handbook for a factory, but for cognitive work in the 
 - Deployed on Netlify at handbook.turtleand.com
 - Part of the Turtleand ecosystem (turtleand.com, lab, atlas, blog, build)
 
+## Sidebar Navigation Rules
+
+- Sections with child items (collapsible sub-groups) should be grouped together at the top of their parent category.
+- Standalone items (no children) go at the bottom.
+- This visual grouping makes it easier for users to scan: expandable sections first, flat links after.
+
 ## Adding New Principles
 
 1. Pick the right category (or propose a new one)

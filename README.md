@@ -1,49 +1,40 @@
-# Starlight Starter Kit: Basics
+# The AI Handbook
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Practical principles for working with AI. Not theory. Not hype. Just what we've learned building real systems.
 
-```
-npm create astro@latest -- --template starlight
-```
+**Live at:** [handbook.turtleand.com](https://handbook.turtleand.com)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## What This Is
 
-## 🚀 Project Structure
+A quick-reference guide for teams and individuals navigating the AI era. Each principle is short, opinionated, and grounded in real experience building AI-assisted workflows.
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+This isn't a course or a tutorial. It's a handbook. You look up what you need, apply it, move on.
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
+## Categories
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+- **Mindset** — How to think about AI as it evolves
+- **Workflow** — Practical patterns for human-AI collaboration
+- **Economics** — Managing tokens, models, and compute budgets
+- **Quality** — Keeping standards high when AI does the first draft
+- **Organizational Knowledge** — Building institutional memory with AI
+- **Human Element** — Where humans stay in charge (and why)
+- **Foundations** — Core principles from researchers like Ethan Mollick
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+## Built With
 
-Static assets, like favicons, can be placed in the `public/` directory.
+[Astro Starlight](https://starlight.astro.build/) — fast, accessible, markdown-native documentation framework.
 
-## 🧞 Commands
+## Contributing
 
-All commands are run from the root of the project, from a terminal:
+Found something wrong? Have a principle to suggest? Open an issue or submit a PR. Content lives in `src/content/docs/` as MDX files.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## License
 
-## 👀 Want to learn more?
+Content is [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Code is MIT.
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+## Part of the Turtleand Ecosystem
+
+- [turtleand.com](https://turtleand.com) — Home
+- [lab.turtleand.com](https://lab.turtleand.com) — AI Lab (deep dives)
+- [growth.turtleand.com](https://growth.turtleand.com) — Blog
+- [atlas.turtleand.com](https://atlas.turtleand.com) — AI Atlas

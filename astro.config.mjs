@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'The AI Handbook',
+			title: 'Human-AI Collaboration Handbook',
 			social: [
 				{ 
 					icon: 'github', 
@@ -19,12 +19,6 @@ export default defineConfig({
 					label: 'Start Here',
 					items: [
 						{ label: 'Welcome', slug: 'index' },
-					],
-				},
-				{
-					label: 'Foundations',
-					items: [
-						{ label: "Ethan Mollick's Four Principles", slug: 'foundations/ethan-mollick-principles' },
 					],
 				},
 				{

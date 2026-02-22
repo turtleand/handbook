@@ -1,4 +1,4 @@
-# The AI Handbook
+# Human-AI Collaboration Handbook
 
 Practical principles for working with AI. Not theory. Not hype. Just what we've learned building real systems.
 
@@ -18,7 +18,6 @@ This isn't a course or a tutorial. It's a handbook. You look up what you need, a
 - **Quality** — Keeping standards high when AI does the first draft
 - **Organizational Knowledge** — Building institutional memory with AI
 - **Human Element** — Where humans stay in charge (and why)
-- **Foundations** — Core principles from researchers like Ethan Mollick
 
 ## Built With
 

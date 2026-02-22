@@ -1,4 +1,4 @@
-# CLAUDE.md — The AI Handbook
+# CLAUDE.md — Human-AI Collaboration Handbook
 
 ## Purpose
 
@@ -17,7 +17,6 @@ Think of it like a safety handbook for a factory, but for cognitive work in the 
 - How to maintain quality standards (Quality)
 - How to build lasting organizational knowledge (Organizational Knowledge)
 - Where humans must stay in the loop (Human Element)
-- Foundational research that grounds everything (Foundations)
 
 **Voice:**
 - Practical over theoretical

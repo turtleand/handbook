@@ -2,21 +2,27 @@
 
 :root {
 	--sl-sidebar-width: 18rem;
-	--sl-content-width: 50rem;
+	--sl-content-width: 55rem;
 }
 
-/* Make the right TOC ("On this page") thinner */
-.right-sidebar {
-	width: 11rem;
+/* Shrink the right TOC ("On this page") */
+starlight-toc {
+	width: 8rem;
 }
 
-.right-sidebar-panel {
-	width: 11rem;
-}
-
-/* On larger screens, give more space to content */
 @media (min-width: 72rem) {
+	.right-sidebar {
+		width: 8rem;
+	}
+	
+	.right-sidebar-panel {
+		width: 8rem;
+	}
+}
+
+/* On larger screens, give even more space to content */
+@media (min-width: 80rem) {
 	:root {
-		--sl-content-width: 55rem;
+		--sl-content-width: 60rem;
 	}
 }

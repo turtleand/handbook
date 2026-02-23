@@ -82,11 +82,7 @@ export default defineConfig({
 					label: 'Human Element',
 					collapsed: true,
 					items: [
-						{ label: 'The Bottleneck Is Judgment', slug: 'human-element/bottleneck-is-judgment' },
-						{ label: "What AI Shouldn't Do", slug: 'human-element/what-ai-shouldnt-do' },
-						{ label: 'When to Override', slug: 'human-element/when-to-override' },
-						{ label: 'Write Like a Human', slug: 'human-element/write-like-a-human' },
-						{ label: 'Family > Work > Content', slug: 'human-element/priorities-in-crisis' },
+						{ label: 'Humans Set the Direction', slug: 'human-element/humans-set-the-direction' },
 					],
 				},
 			],

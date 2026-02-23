@@ -52,6 +52,7 @@ export default defineConfig({
 						{ label: 'Automated First Pass, Human Final Review', slug: 'workflow/automated-first-pass' },
 						{ label: 'Reduce the Human Bottleneck', slug: 'workflow/voice-first' },
 						{ label: 'Plan Before You Build', slug: 'workflow/plan-before-execution' },
+						{ label: 'Agents Scan, Humans Verify', slug: 'workflow/agents-scan-for-errors' },
 					],
 				},
 				{
@@ -65,11 +66,7 @@ export default defineConfig({
 					label: 'Quality',
 					collapsed: true,
 					items: [
-						{ label: 'Trust But Verify', slug: 'quality/trust-but-verify' },
-						{ label: 'Sub-Agent Visual Review Rule', slug: 'quality/visual-review-rule' },
-						{ label: 'Zero Breaking Changes Policy', slug: 'quality/zero-breaking-changes' },
-						{ label: 'Share Learnings, Never Expose Ourselves', slug: 'quality/share-learnings-never-expose' },
-						{ label: 'Pre-Execution Alignment', slug: 'quality/pre-execution-alignment' },
+						{ label: 'Quality Is Iterations', slug: 'quality/iterations-are-the-ceiling' },
 					],
 				},
 				{

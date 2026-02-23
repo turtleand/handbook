@@ -14,10 +14,8 @@ details details > summary .group-label .large {
 	font-weight: normal;
 }
 
-/* Hide the right sidebar container entirely since TOC is disabled */
-.right-sidebar-container {
-	display: none;
-}
+/* Hide the right sidebar container when TOC is empty (most pages) */
+/* Pages with tableOfContents: true in frontmatter will still show it */
 
 /* Let main content use the full width */
 @media (min-width: 72rem) {

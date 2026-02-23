@@ -74,10 +74,8 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: 'Document Everything', slug: 'organizational-knowledge/document-everything' },
-						{ label: 'Daily Notes + Long-Term Memory', slug: 'organizational-knowledge/daily-notes-long-term-memory' },
 						{ label: 'Compound Your Context', slug: 'organizational-knowledge/compound-your-context' },
 						{ label: 'Agent-Friendly Content', slug: 'organizational-knowledge/agent-friendly-content' },
-						{ label: 'Two Birds, One Stone', slug: 'organizational-knowledge/two-birds-one-stone' },
 					],
 				},
 				{

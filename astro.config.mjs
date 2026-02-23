@@ -57,11 +57,7 @@ export default defineConfig({
 					label: 'Economics',
 					collapsed: true,
 					items: [
-						{ label: "Computation Isn't the Bottleneck", slug: 'economics/computation-not-bottleneck' },
-						{ label: 'Opus for Thinking, Sonnet for Doing', slug: 'economics/opus-thinking-sonnet-doing' },
-						{ label: 'The 14.3% Daily Budget', slug: 'economics/daily-budget' },
-						{ label: 'Batch Similar Tasks', slug: 'economics/batch-similar-tasks' },
-						{ label: 'Cost of Freezing > Cost of Spawning', slug: 'economics/cost-of-freezing' },
+						{ label: 'Give People the Best Models', slug: 'economics/give-people-the-best-models' },
 					],
 				},
 				{

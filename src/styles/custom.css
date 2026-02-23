@@ -1,32 +1,27 @@
-/* Widen sidebar and main content, shrink "On this page" panel */
+/* Layout: wider sidebar and content, no right TOC */
 
 :root {
 	--sl-sidebar-width: 18rem;
-	--sl-content-width: 55rem;
+	--sl-content-width: 65rem;
 }
 
 /* 
  * Normalize nested group labels to match regular sidebar links.
  * "details details" = any group inside another group.
- * Top-level categories (Mindset, Workflow, etc.) stay bold.
- * Nested sub-groups (AI Innovation, Navigator) become normal weight.
  */
 details details > summary .group-label .large {
 	font-size: var(--sl-text-sm);
 	font-weight: normal;
 }
 
-/* Shrink the right TOC ("On this page") */
+/* Hide the right sidebar container entirely since TOC is disabled */
+.right-sidebar-container {
+	display: none;
+}
+
+/* Let main content use the full width */
 @media (min-width: 72rem) {
 	:root {
-		--sl-content-width: 60rem;
-	}
-	
-	.right-sidebar-container {
-		width: 8rem;
-	}
-	
-	.right-sidebar {
-		width: 8rem;
+		--sl-content-width: 70rem;
 	}
 }

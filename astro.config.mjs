@@ -86,6 +86,7 @@ export default defineConfig({
 					],
 				},
 			],
+			tableOfContents: false,
 			customCss: ['./src/styles/custom.css'],
 		}),
 	],

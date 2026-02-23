@@ -51,6 +51,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Automated First Pass, Human Final Review', slug: 'workflow/automated-first-pass' },
 						{ label: 'Reduce the Human Bottleneck', slug: 'workflow/voice-first' },
+						{ label: 'Plan Before You Build', slug: 'workflow/plan-before-execution' },
 					],
 				},
 				{

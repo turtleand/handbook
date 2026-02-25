@@ -67,6 +67,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: 'Quality Is Iterations', slug: 'quality/iterations-are-the-ceiling' },
+						{ label: 'Understanding Preserves Optionality', slug: 'quality/preserve-understanding' },
 					],
 				},
 				{
@@ -76,6 +77,7 @@ export default defineConfig({
 						{ label: 'Document Everything', slug: 'organizational-knowledge/document-everything' },
 						{ label: 'Compound Your Context', slug: 'organizational-knowledge/compound-your-context' },
 						{ label: 'Agent-Friendly Content', slug: 'organizational-knowledge/agent-friendly-content' },
+						{ label: 'If AI Becomes the Framework', slug: 'organizational-knowledge/ai-as-framework' },
 					],
 				},
 				{

@@ -78,6 +78,7 @@ export default defineConfig({
 						{ label: 'Compound Your Context', slug: 'organizational-knowledge/compound-your-context' },
 						{ label: 'Agent-Friendly Content', slug: 'organizational-knowledge/agent-friendly-content' },
 						{ label: 'If AI Becomes the Framework', slug: 'organizational-knowledge/ai-as-framework' },
+						{ label: 'Living Institutional Memory', slug: 'organizational-knowledge/living-institutional-memory' },
 					],
 				},
 				{

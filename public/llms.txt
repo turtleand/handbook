@@ -1,0 +1,36 @@
+# Human-AI Collaboration Handbook
+> Principles for effective human-AI collaboration at Turtleand
+
+## Start Here
+- [Welcome](https://handbook.turtleand.com/)
+
+## Mindset
+- [Your Assumptions Expire Fast](https://handbook.turtleand.com/mindset/ai-innovation-accelerates/)
+- [Today's Models Are the Worst](https://handbook.turtleand.com/mindset/todays-models-worst/)
+- [Validate and Steer](https://handbook.turtleand.com/mindset/navigator-not-passenger/)
+- [Seek a Plurality of Voices](https://handbook.turtleand.com/mindset/plurality-of-voices/)
+- [Always Invite AI to the Table](https://handbook.turtleand.com/mindset/invite-ai/)
+- [Human Strength Is the Intent](https://handbook.turtleand.com/mindset/human-strength-is-intent/)
+
+## Workflow
+- [Automated First Pass, Human Final Review](https://handbook.turtleand.com/workflow/automated-first-pass/)
+- [Reduce the Human Bottleneck](https://handbook.turtleand.com/workflow/voice-first/)
+- [Plan Before You Build](https://handbook.turtleand.com/workflow/plan-before-execution/)
+- [Agents Scan, Humans Verify](https://handbook.turtleand.com/workflow/agents-scan-for-errors/)
+
+## Economics
+- [Give People the Best Models](https://handbook.turtleand.com/economics/give-people-the-best-models/)
+
+## Quality
+- [Quality Is Iterations](https://handbook.turtleand.com/quality/iterations-are-the-ceiling/)
+- [Understanding Preserves Optionality](https://handbook.turtleand.com/quality/preserve-understanding/)
+
+## Organizational Knowledge
+- [Document Everything](https://handbook.turtleand.com/organizational-knowledge/document-everything/)
+- [Compound Your Context](https://handbook.turtleand.com/organizational-knowledge/compound-your-context/)
+- [Agent-Friendly Content](https://handbook.turtleand.com/organizational-knowledge/agent-friendly-content/)
+- [If AI Becomes the Framework](https://handbook.turtleand.com/organizational-knowledge/ai-as-framework/)
+- [Living Institutional Memory](https://handbook.turtleand.com/organizational-knowledge/living-institutional-memory/)
+
+## Human Element
+- [Humans Set the Direction](https://handbook.turtleand.com/human-element/humans-set-the-direction/)

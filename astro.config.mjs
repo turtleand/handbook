@@ -54,6 +54,7 @@ export default defineConfig({
 						{ label: 'Reduce the Human Bottleneck', slug: 'workflow/voice-first' },
 						{ label: 'Plan Before You Build', slug: 'workflow/plan-before-execution' },
 						{ label: 'Agents Scan, Humans Verify', slug: 'workflow/agents-scan-for-errors' },
+						{ label: 'Design for Provider Independence', slug: 'workflow/provider-independence' },
 					],
 				},
 				{

@@ -1,0 +1,22 @@
+---
+title: Design for Provider Independence
+description: Your AI infrastructure should survive any single provider going away.
+---
+
+Your AI infrastructure should survive any single provider going away.
+
+## The principle
+
+Models are interchangeable. Your prompts, context, workflows, and memory system are the real assets. Build so the model is the easiest part to replace.
+
+## In practice
+
+- **Treat models as pluggable components.** Config changes, not code rewrites.
+- **Write model-agnostic prompts.** Clear instructions work everywhere. Exploiting one model's quirks creates a dependency.
+- **Keep a migration checklist ready.** Not if, when. Know where every provider-specific reference lives.
+- **Test failover before you need it.** Add a second provider. Verify it works. You don't have to use it daily.
+- **Separate context from model.** Memory files, personality docs, tool configs: all portable. If they're stored in provider-agnostic formats, migration is just pointing a new model at the same context.
+
+## The test
+
+Could you switch your primary model in under 4 hours? If not, you have hidden dependencies. Find them before the email arrives telling you the clock is ticking.

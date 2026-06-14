@@ -51,6 +51,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: 'Automated First Pass, Human Final Review', slug: 'workflow/automated-first-pass' },
+						{ label: 'Automate Preparation, Not Judgment', slug: 'workflow/automate-preparation-not-judgment' },
 						{ label: 'Reduce the Human Bottleneck', slug: 'workflow/voice-first' },
 						{ label: 'Plan Before You Build', slug: 'workflow/plan-before-execution' },
 						{ label: 'Agents Scan, Humans Verify', slug: 'workflow/agents-scan-for-errors' },

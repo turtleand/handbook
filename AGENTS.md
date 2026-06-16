@@ -1,6 +1,6 @@
-# AGENTS.md — handbook
+# AGENTS.md - handbook
 
-See `CLAUDE.md` for philosophy, content, and sidebar rules.
+See `CLAUDE.md` for philosophy, content, and sidebar rules. This file gives repository-level guidance for Codex automatic PR reviews and other AI agents.
 
 ## Scope
 
@@ -8,9 +8,11 @@ Applies only to `handbook/`.
 
 ## Ecosystem role
 
-- Handbook is the principles layer and portable operating system for human-AI collaboration within Turtleand.
-- Its primary contribution is compression: turning broad ecosystem thinking into concise, reusable operating guidance.
-- It should stay short, doctrine-like, and broadly applicable rather than drifting into tutorials or tool-specific implementation detail.
+- Handbook is the compressed doctrine and portable operating-principles layer of Turtleand.
+- Its job is to turn broad ecosystem thinking into concise, durable, reusable guidance.
+- Keep Handbook short, principle-level, and broadly applicable.
+- Avoid tutorial drift, tool-specific sprawl, and reflective essays that belong in Growth.
+- Route deep implementation tutorials to `ai-lab/`, `build/`, `openclaw-lab/`, or `hermes-lab/` as appropriate. Route identity and navigation to `portal/`, and tool maps to `ai-atlas/`.
 
 ## Project summary
 
@@ -25,18 +27,37 @@ Applies only to `handbook/`.
 3. Keep pages concise and standalone.
 4. Avoid editing generated output or unrelated framework files unless the task requires it.
 
-## Content guidance
+## Public-safety review
 
-- Favor durable principles over rapidly dated tool specifics.
-- Write for individuals and teams who need operating rules, not long tutorials.
-- Keep doctrine portable, memorable, and machine-readable.
-- Preserve the category structure around mindset, workflow, economics, quality, organizational knowledge, and human element unless explicitly changing the information architecture.
+Reject changes that expose secrets, credentials, private infrastructure details, internal paths, specific vulnerabilities, or operational weaknesses. Safe public lessons are allowed when they describe general patterns, architecture trade-offs, defensive principles, or non-sensitive implementation choices.
 
-## Cross-project boundaries
+Keep private things private. Share learnings, not exposure.
 
-- Route deep implementation tutorials to `ai-lab/`, `openclaw/`, or `build/` as appropriate.
-- Route identity, featured work, and ecosystem navigation to `portal/`.
-- Route tool-landscape mapping and category discovery to `ai-atlas/`.
+## Content quality review
+
+- Favor clarity, compression, and durable usefulness over novelty.
+- Preserve human agency, responsibility, judgment, taste, ethics, and consequences as central themes.
+- Avoid overclaiming, hype, long essays, and temporary tool details that will age quickly.
+- Preserve Turtleand voice: calm, precise, direct, reflective when useful, practical when needed.
+- Do not introduce em dashes in public writing.
+- Review sidebar and navigation changes carefully because Handbook structure is part of the artifact.
+
+## Repository integrity review
+
+- Keep changes focused to the branch purpose.
+- Do not silently modify generated or build output unless the repo explicitly tracks it or the change requires regeneration.
+- Keep routes, Starlight sidebar structure, sitemaps, indexes, and AI-readable artifacts in sync when the repo uses them.
+- Run local validation before PR creation.
+
+## PR review checklist
+
+Codex and other agents should check:
+
+- Does the change strengthen Handbook as compressed operating doctrine?
+- Is the guidance concise, durable, and principle-level?
+- Is anything private, unsafe, or operationally sensitive exposed?
+- Are navigation, routes, generated files, and indexes still correct?
+- Is the diff small, coherent, and free from unrelated cleanup?
 
 ## Commands
 

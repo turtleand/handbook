@@ -14,9 +14,11 @@
 
 ## Workflow
 - [Automated First Pass, Human Final Review](https://handbook.turtleand.com/workflow/automated-first-pass/)
+- [Capture, Clarify, Review](https://handbook.turtleand.com/workflow/capture-clarify-ready-review/)
 - [Reduce the Human Bottleneck](https://handbook.turtleand.com/workflow/voice-first/)
 - [Plan Before You Build](https://handbook.turtleand.com/workflow/plan-before-execution/)
 - [Agents Scan, Humans Verify](https://handbook.turtleand.com/workflow/agents-scan-for-errors/)
+- [Design for Provider Independence](https://handbook.turtleand.com/workflow/provider-independence/)
 
 ## Economics
 - [Give People the Best Models](https://handbook.turtleand.com/economics/give-people-the-best-models/)

@@ -15,6 +15,7 @@
 ## Workflow
 - [Automated First Pass, Human Final Review](https://handbook.turtleand.com/workflow/automated-first-pass/)
 - [Capture, Clarify, Review](https://handbook.turtleand.com/workflow/capture-clarify-ready-review/)
+- [Pattern-First Public Learning](https://handbook.turtleand.com/workflow/generic-reversible-public-safe-examples/)
 - [Reduce the Human Bottleneck](https://handbook.turtleand.com/workflow/voice-first/)
 - [Plan Before You Build](https://handbook.turtleand.com/workflow/plan-before-execution/)
 - [Agents Scan, Humans Verify](https://handbook.turtleand.com/workflow/agents-scan-for-errors/)

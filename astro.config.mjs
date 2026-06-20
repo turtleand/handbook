@@ -8,6 +8,12 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Human-AI Collaboration Handbook',
+			head: [
+				{ tag: 'meta', attrs: { property: 'og:site_name', content: 'Human-AI Collaboration Handbook' } },
+				{ tag: 'meta', attrs: { property: 'og:image', content: 'https://handbook.turtleand.com/favicon.svg' } },
+				{ tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
+				{ tag: 'meta', attrs: { name: 'twitter:image', content: 'https://handbook.turtleand.com/favicon.svg' } },
+			],
 			social: [
 				{ 
 					icon: 'github', 

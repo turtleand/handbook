@@ -1,25 +1,252 @@
-/* Layout: wider sidebar and content, no right TOC */
+/* Handbook surface: lean doctrine, quiet authority */
 
 :root {
-	--sl-sidebar-width: 18rem;
-	--sl-content-width: 65rem;
+	--sl-sidebar-width: 15.5rem;
+	--sl-content-width: 50rem;
+	--handbook-ink: #16120d;
+	--handbook-muted: #6e665b;
+	--handbook-line: #e6ded1;
+	--handbook-paper: #fffdf8;
+	--handbook-wash: #f7f1e7;
+	--handbook-accent: #8f3f1d;
+	--handbook-accent-soft: #f1d9c8;
+	--sl-color-accent: var(--handbook-accent);
+	--sl-color-accent-high: #5d2410;
+	--sl-color-accent-low: var(--handbook-accent-soft);
 }
 
-/* 
- * Normalize nested group labels to match regular sidebar links.
- * "details details" = any group inside another group.
- */
-details details > summary .group-label .large {
-	font-size: var(--sl-text-sm);
-	font-weight: normal;
+:root[data-theme='dark'] {
+	--handbook-ink: #f6efe6;
+	--handbook-muted: #bdb2a3;
+	--handbook-line: #403529;
+	--handbook-paper: #17120d;
+	--handbook-wash: #211910;
+	--handbook-accent: #e6a06c;
+	--handbook-accent-soft: #3a2114;
+	--sl-color-accent: #e6a06c;
+	--sl-color-accent-high: #ffd8ba;
+	--sl-color-accent-low: #3a2114;
 }
 
-/* Hide the right sidebar container when TOC is empty (most pages) */
-/* Pages with tableOfContents: true in frontmatter will still show it */
+body {
+	background:
+		radial-gradient(circle at top left, color-mix(in srgb, var(--handbook-accent-soft) 58%, transparent), transparent 22rem),
+		linear-gradient(180deg, var(--handbook-paper), var(--handbook-paper));
+	color: var(--handbook-ink);
+}
 
-/* Let main content use the full width */
+.header {
+	border-bottom: 1px solid var(--handbook-line);
+	background: color-mix(in srgb, var(--handbook-paper) 92%, transparent);
+	backdrop-filter: blur(12px);
+}
+
+.site-title {
+	font-size: 0.78rem;
+	font-weight: 760;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--handbook-ink);
+}
+
+.site-title:hover {
+	color: var(--handbook-accent);
+}
+
+.header a[href*='github.com'] {
+	display: none;
+}
+
+button[aria-label='Search'],
+button[data-open-modal] {
+	border-color: var(--handbook-line);
+	box-shadow: none;
+}
+
+.sidebar-pane {
+	border-inline-end: 1px solid var(--handbook-line);
+	background: color-mix(in srgb, var(--handbook-paper) 88%, transparent);
+}
+
+.sidebar-content summary,
+.sidebar-content a {
+	border-radius: 0.55rem;
+}
+
+.sidebar-content summary {
+	font-size: 0.78rem;
+	font-weight: 720;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+}
+
+.sidebar-content a[aria-current='page'] {
+	background: var(--handbook-accent);
+	color: #fffdf8;
+	box-shadow: none;
+}
+
+.right-sidebar-container {
+	display: none;
+}
+
+main .content-panel {
+	border: 0;
+}
+
+main .sl-container {
+	max-width: 50rem;
+}
+
+main h1 {
+	max-width: 15ch;
+	font-size: clamp(2.55rem, 5vw, 4.6rem);
+	letter-spacing: -0.065em;
+	line-height: 0.94;
+	text-wrap: balance;
+}
+
+main:has(.handbook-home) h1 {
+	max-width: 12ch;
+	font-size: clamp(3.35rem, 8vw, 6.75rem);
+	line-height: 0.86;
+}
+
+.sl-markdown-content {
+	font-size: 1rem;
+	line-height: 1.75;
+}
+
+.sl-markdown-content h2 {
+	letter-spacing: -0.035em;
+}
+
+.sl-anchor-link {
+	opacity: 0;
+	transition: opacity 160ms ease;
+}
+
+.sl-heading-wrapper:hover .sl-anchor-link,
+.sl-anchor-link:focus-visible {
+	opacity: 1;
+}
+
+.handbook-home {
+	padding-block: 0.25rem 2.5rem;
+}
+
+.handbook-kicker {
+	margin: 0 0 0.9rem;
+	color: var(--handbook-accent);
+	font-size: 0.78rem;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.handbook-lead {
+	max-width: 45rem;
+	margin: 0;
+	color: var(--handbook-ink);
+	font-size: clamp(1.16rem, 2.3vw, 1.55rem);
+	line-height: 1.55;
+	text-wrap: balance;
+}
+
+.handbook-rule {
+	width: min(16rem, 44vw);
+	height: 1px;
+	margin: 2.2rem 0;
+	background: linear-gradient(90deg, var(--handbook-accent), transparent);
+}
+
+.principle-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.85rem;
+	margin-top: 0;
+}
+
+.principle-card {
+	display: grid;
+	gap: 0.5rem;
+	min-height: 10.25rem;
+	padding: 1.15rem;
+	border: 1px solid var(--handbook-line);
+	border-radius: 1.1rem;
+	background: color-mix(in srgb, var(--handbook-paper) 82%, var(--handbook-wash));
+	color: var(--handbook-ink);
+	text-decoration: none;
+	transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.principle-card:hover,
+.principle-card:focus-visible {
+	border-color: var(--handbook-accent);
+	background: var(--handbook-paper);
+	transform: translateY(-1px);
+}
+
+.principle-card span {
+	color: var(--handbook-muted);
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.principle-card strong {
+	max-width: 13rem;
+	font-size: 1.12rem;
+	letter-spacing: -0.03em;
+	line-height: 1.1;
+}
+
+.principle-card em {
+	align-self: end;
+	color: var(--handbook-muted);
+	font-size: 0.91rem;
+	font-style: normal;
+	line-height: 1.45;
+}
+
+.handbook-note {
+	max-width: 39rem;
+	margin-top: 2rem;
+	color: var(--handbook-muted);
+	font-size: 0.92rem;
+}
+
+.pagination-links {
+	display: none;
+}
+
 @media (min-width: 72rem) {
 	:root {
-		--sl-content-width: 70rem;
+		--sl-content-width: 54rem;
+	}
+}
+
+@media (max-width: 50rem) {
+	main h1 {
+		max-width: 100%;
+		font-size: clamp(2.35rem, 12vw, 3.4rem);
+		letter-spacing: -0.06em;
+		word-break: normal;
+		overflow-wrap: normal;
+		hyphens: none;
+	}
+
+	main:has(.handbook-home) h1 {
+		font-size: clamp(2.65rem, 14vw, 3.75rem);
+		letter-spacing: -0.07em;
+	}
+
+	.principle-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.principle-card {
+		min-height: 8.5rem;
 	}
 }

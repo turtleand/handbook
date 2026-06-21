@@ -223,6 +223,85 @@ main:has(.handbook-home) h1 {
 
 .pagination-links {
 	display: none;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.85rem;
+	margin-top: 3rem;
+	padding-top: 1.4rem;
+	border-top: 1px solid var(--handbook-line);
+}
+
+.pagination-links:has(> :only-child) {
+	grid-template-columns: minmax(0, 1fr);
+}
+
+.pagination-links a {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	align-items: start;
+	gap: 0.85rem;
+	min-height: 5.25rem;
+	padding: 1rem 1.1rem;
+	border: 1px solid var(--handbook-line);
+	border-radius: 1rem;
+	background: color-mix(in srgb, var(--handbook-paper) 86%, var(--handbook-wash));
+	color: var(--handbook-ink);
+	box-shadow: none;
+	text-decoration: none;
+	transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.pagination-links a:hover,
+.pagination-links a:focus-visible {
+	border-color: var(--handbook-accent);
+	background: var(--handbook-paper);
+	transform: translateY(-1px);
+}
+
+.pagination-links a[rel='next'] {
+	grid-template-columns: minmax(0, 1fr) auto;
+	text-align: end;
+}
+
+.pagination-links a[rel='next'] svg {
+	order: 2;
+}
+
+.pagination-links a[rel='next'] > span {
+	order: 1;
+}
+
+.pagination-links svg {
+	box-sizing: content-box;
+	width: 1rem;
+	height: 1rem;
+	padding: 0.28rem;
+	border: 1px solid var(--handbook-line);
+	border-radius: 999px;
+	color: var(--handbook-accent);
+}
+
+.pagination-links a > span {
+	display: grid;
+	gap: 0.34rem;
+	color: var(--handbook-muted);
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	line-height: 1.15;
+	text-transform: uppercase;
+}
+
+.pagination-links br {
+	display: none;
+}
+
+.pagination-links .link-title {
+	color: var(--handbook-ink);
+	font-size: 1rem;
+	font-weight: 720;
+	letter-spacing: -0.025em;
+	line-height: 1.2;
+	text-transform: none;
 }
 
 @media (min-width: 72rem) {
@@ -252,5 +331,17 @@ main:has(.handbook-home) h1 {
 
 	.principle-card {
 		min-height: 8.5rem;
+	}
+
+	.pagination-links {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.75rem;
+		margin-top: 2.4rem;
+		padding-top: 1.2rem;
+	}
+
+	.pagination-links a {
+		min-height: 4.75rem;
 	}
 }

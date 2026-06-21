@@ -1,6 +1,6 @@
 # AGENTS.md - handbook
 
-See `CLAUDE.md` for philosophy, content, and sidebar rules. This file gives repository-level guidance for Codex automatic PR reviews and other AI agents.
+Repository-level guidance for Codex automatic PR reviews and other AI agents working in `handbook/`.
 
 ## Scope
 
@@ -19,13 +19,28 @@ Applies only to `handbook/`.
 - Stack: Astro Starlight
 - Status: Active
 - Primary content: principle pages under `src/content/docs/`
+- Primary style layer: `src/styles/custom.css`
+- Primary navigation config: `astro.config.mjs`
 
 ## Workflow
 
-1. Read `CLAUDE.md` before editing categories, navigation, or principle structure.
-2. Prefer edits in `src/content/docs/`.
-3. Keep pages concise and standalone.
-4. Avoid editing generated output or unrelated framework files unless the task requires it.
+1. Prefer focused edits in `src/content/docs/`, `src/styles/custom.css`, and `astro.config.mjs`.
+2. Keep pages concise and standalone.
+3. Avoid editing generated output or unrelated framework files unless the task requires it.
+4. If navigation changes, verify sidebar structure, routes, and built output together.
+5. Run local validation before PR creation.
+
+## UI craft review
+
+Handbook UI should feel like compressed operating doctrine: quiet, beautiful, direct, and low-noise.
+
+- Prefer fewer elements over more decoration.
+- Preserve clear hierarchy, generous reading rhythm, and fast orientation.
+- Remove low-utility badges, panels, labels, sidebars, repeated links, and decorative chrome when they do not help comprehension.
+- Keep one restrained visual signature rather than several competing effects.
+- Favor semantic markup and maintainable CSS over brittle one-off styling.
+- Check desktop, dark mode, and narrow mobile behavior when changing layout or style.
+- Do not turn Handbook into a marketing page, dashboard, course platform, or generic SaaS landing page.
 
 ## Public-safety review
 
@@ -47,7 +62,7 @@ Keep private things private. Share learnings, not exposure.
 - Keep changes focused to the branch purpose.
 - Do not silently modify generated or build output unless the repo explicitly tracks it or the change requires regeneration.
 - Keep routes, Starlight sidebar structure, sitemaps, indexes, and AI-readable artifacts in sync when the repo uses them.
-- Run local validation before PR creation.
+- Run `npm run build` and `git diff --check` before PR creation.
 
 ## PR review checklist
 
@@ -55,6 +70,7 @@ Codex and other agents should check:
 
 - Does the change strengthen Handbook as compressed operating doctrine?
 - Is the guidance concise, durable, and principle-level?
+- Is the UI leaner, clearer, and less noisy than before?
 - Is anything private, unsafe, or operationally sensitive exposed?
 - Are navigation, routes, generated files, and indexes still correct?
 - Is the diff small, coherent, and free from unrelated cleanup?

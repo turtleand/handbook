@@ -42,6 +42,9 @@ body {
 }
 
 .site-title {
+	display: inline-flex;
+	align-items: center;
+	min-height: 3rem;
 	font-size: 0.78rem;
 	font-weight: 760;
 	letter-spacing: 0.16em;
@@ -57,8 +60,33 @@ body {
 	display: none;
 }
 
+body > a[href='#_top']:not(:focus):not(:focus-visible) {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+body > a[href='#_top']:focus-visible {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 3rem;
+	min-height: 3rem;
+}
+
 button[aria-label='Search'],
 button[data-open-modal] {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 3rem;
+	min-height: 3rem;
 	border-color: var(--handbook-line);
 	box-shadow: none;
 }
@@ -70,6 +98,9 @@ button[data-open-modal] {
 
 .sidebar-content summary,
 .sidebar-content a {
+	display: flex;
+	align-items: center;
+	min-height: 3rem;
 	border-radius: 0.55rem;
 }
 
@@ -126,6 +157,11 @@ main:has(.handbook-home) h1 {
 }
 
 .sl-anchor-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 3rem;
+	min-height: 3rem;
 	opacity: 0;
 	transition: opacity 160ms ease;
 }

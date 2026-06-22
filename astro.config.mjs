@@ -39,6 +39,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Automated First Pass', slug: 'workflow/automated-first-pass' },
 						{ label: 'Capture, Clarify, Review', slug: 'workflow/capture-clarify-ready-review' },
+						{ label: 'Public Artifact Synthesis', slug: 'workflow/public-artifact-synthesis' },
 						{ label: 'Reduce the Human Bottleneck', slug: 'workflow/voice-first' },
 						{ label: 'Plan Before You Build', slug: 'workflow/plan-before-execution' },
 						{ label: 'Agents Scan, Humans Verify', slug: 'workflow/agents-scan-for-errors' },

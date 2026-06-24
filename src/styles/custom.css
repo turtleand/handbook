@@ -92,9 +92,17 @@ body > a[href='#_top']:focus-visible {
 }
 
 button[aria-label='Search'],
-button[data-open-modal],
-starlight-menu-button button {
+button[data-open-modal] {
 	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 3rem;
+	min-height: 3rem;
+	border-color: var(--handbook-line);
+	box-shadow: none;
+}
+
+starlight-menu-button button {
 	align-items: center;
 	justify-content: center;
 	min-width: 3rem;

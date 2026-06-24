@@ -102,6 +102,15 @@ button[data-open-modal] {
 	box-shadow: none;
 }
 
+starlight-menu-button button {
+	align-items: center;
+	justify-content: center;
+	min-width: 3rem;
+	min-height: 3rem;
+	border-color: var(--handbook-line);
+	box-shadow: none;
+}
+
 .sidebar-pane {
 	border-inline-end: 1px solid var(--handbook-line);
 	background: color-mix(in srgb, var(--handbook-paper) 88%, transparent);

@@ -9,6 +9,7 @@ export default defineConfig({
 		starlight({
 			title: 'Turtleand Handbook',
 			head: [
+				{ tag: 'link', attrs: { rel: 'alternate', type: 'application/rss+xml', title: 'Turtleand Handbook RSS', href: '/rss.xml' } },
 				{ tag: 'meta', attrs: { property: 'og:site_name', content: 'Turtleand Handbook' } },
 				{ tag: 'meta', attrs: { property: 'og:image', content: 'https://handbook.turtleand.com/social-card.png' } },
 				{ tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },

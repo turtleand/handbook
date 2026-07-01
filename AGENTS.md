@@ -46,6 +46,8 @@ Handbook UI should feel like compressed operating doctrine: quiet, beautiful, di
 
 Reject changes that expose secrets, credentials, private infrastructure details, internal paths, specific vulnerabilities, or operational weaknesses. Safe public lessons are allowed when they describe general patterns, architecture trade-offs, defensive principles, or non-sensitive implementation choices.
 
+Never include Turtleand-restricted Google Drive folder or file links in public repo content, PR descriptions, issue bodies, article text, or generated artifacts. Private review artifacts stay in private handoff channels, not GitHub PR bodies.
+
 Keep private things private. Share learnings, not exposure.
 
 ## Content quality review

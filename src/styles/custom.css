@@ -35,7 +35,7 @@ body {
 	color: var(--handbook-ink);
 }
 
-.header {
+header.header {
 	border-bottom: 1px solid var(--handbook-line);
 	background: color-mix(in srgb, var(--handbook-paper) 92%, transparent);
 	backdrop-filter: blur(12px);

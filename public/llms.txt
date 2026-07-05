@@ -17,6 +17,7 @@
 - [Capture, Clarify, Review](https://handbook.turtleand.com/workflow/capture-clarify-ready-review/)
 - [Frontier Signal Loop](https://handbook.turtleand.com/workflow/frontier-signal-loop/)
 - [Public Artifact Synthesis](https://handbook.turtleand.com/workflow/public-artifact-synthesis/)
+- [Positioning as Proof of Direction](https://handbook.turtleand.com/workflow/positioning-as-proof-of-direction/)
 - [Reduce the Human Bottleneck](https://handbook.turtleand.com/workflow/voice-first/)
 - [Plan Before You Build](https://handbook.turtleand.com/workflow/plan-before-execution/)
 - [Agents Scan, Humans Verify](https://handbook.turtleand.com/workflow/agents-scan-for-errors/)

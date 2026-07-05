@@ -9,6 +9,7 @@ export default defineConfig({
 		starlight({
 			title: 'Turtleand Handbook',
 			head: [
+				{ tag: 'link', attrs: { rel: 'alternate', type: 'application/rss+xml', title: 'Turtleand Handbook RSS', href: '/rss.xml' } },
 				{ tag: 'meta', attrs: { property: 'og:site_name', content: 'Turtleand Handbook' } },
 				{ tag: 'meta', attrs: { property: 'og:image', content: 'https://handbook.turtleand.com/social-card.png' } },
 				{ tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
@@ -41,6 +42,7 @@ export default defineConfig({
 						{ label: 'Capture, Clarify, Review', slug: 'workflow/capture-clarify-ready-review' },
 						{ label: 'Frontier Signal Loop', slug: 'workflow/frontier-signal-loop' },
 						{ label: 'Public Artifact Synthesis', slug: 'workflow/public-artifact-synthesis' },
+						{ label: 'Positioning as Proof', slug: 'workflow/positioning-as-proof-of-direction' },
 						{ label: 'Reduce the Human Bottleneck', slug: 'workflow/voice-first' },
 						{ label: 'Plan Before You Build', slug: 'workflow/plan-before-execution' },
 						{ label: 'Agents Scan, Humans Verify', slug: 'workflow/agents-scan-for-errors' },

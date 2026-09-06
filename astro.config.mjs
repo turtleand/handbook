@@ -80,6 +80,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: 'Humans Set the Direction', slug: 'human-element/humans-set-the-direction' },
+						{ label: 'Design Around Humans', slug: 'human-element/design-around-humans' },
 					],
 				},
 			],

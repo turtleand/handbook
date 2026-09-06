@@ -39,3 +39,4 @@
 
 ## Human Element
 - [Humans Set the Direction](https://handbook.turtleand.com/human-element/humans-set-the-direction/)
+- [Design Around Humans](https://handbook.turtleand.com/human-element/design-around-humans/)

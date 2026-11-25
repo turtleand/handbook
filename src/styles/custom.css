@@ -102,7 +102,8 @@ button[data-open-modal] {
 	box-shadow: none;
 }
 
-starlight-menu-button button {
+starlight-menu-button button,
+button.sl-menu-button[popovertarget="starlight__sidebar"] {
 	align-items: center;
 	justify-content: center;
 	min-width: 3rem;
